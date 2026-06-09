@@ -1,0 +1,89 @@
+@use 'variables' as *;
+
+.course-card {
+
+  background: #fff;
+  border: 1px solid #E5E8ED;
+  border-radius: 4px;
+  box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08),
+  0 30px 24px -10px rgba(154, 156, 165, 0.05),
+  0 12px 10px -6px rgba(154, 156, 165, 0.04),
+  0 4px 4px -4px rgba(30, 33, 44, 0.03);
+}
+
+.course-card__content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.course-card__image {
+  width: 100%;
+  display: block;
+}
+
+.course-card__title {
+  margin: 20px 0;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: start;
+  color: $main-text-color;
+}
+
+.course-card__badge {
+  border: solid 1px $success-color;
+  border-radius: 4px;
+  background-color: $success-color;
+  text-align: start;
+  padding: 0 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #FFFFFF;
+
+  &--marketing {
+    background-color: $success-color;
+    border: solid 1px $success-color;
+  }
+
+  &--management {
+    background-color: $info-color;
+    border: solid 1px $info-color;
+  }
+
+  &--hr {
+    background-color: $warning-color;
+    border: solid 1px $warning-color;
+  }
+
+  &--design {
+    background-color: $design-color;
+    border: solid 1px $design-color;
+  }
+
+  &--development {
+    background-color: $dev-color;
+    border: solid 1px $dev-color;
+  }
+}
+
+.course-card__info {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+
+  .course-card__price {
+    color: $danger-color;
+    font-weight: 700;
+  }
+
+  .course-card__author {
+    color: $gray-700;
+
+    &::before {
+      content: '|';
+      margin: 0 8px;
+    }
+  }
+}

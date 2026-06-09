@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our online courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="./js/main.js" defer></script>
+</head>
+<body>
+<main class="catalog">
+    <span class="catalog__decor catalog__decor--left" aria-hidden="true"></span>
+    <span class="catalog__decor catalog__decor--right" aria-hidden="true"></span>
+    <span class="catalog__decor catalog__decor--right-arrow" aria-hidden="true"></span>
+    <div class="container">
+        <p class="catalog__description">Enjoy your studying!</p>
+        <h1 class="catalog__title">Our online courses</h1>
+
+        <div class="catalog__actions">
+            <div class="catalog__tablist">
+                <button class="catalog__tab catalog__tab--active" data-category="all">All <sup>17</sup></button>
+                <button class="catalog__tab" data-category="marketing">Marketing <sup>4</sup></button>
+                <button class="catalog__tab" data-category="management">Management <sup>3</sup></button>
+                <button class="catalog__tab" data-category="hr">HR & Recruting <sup>5</sup></button>
+                <button class="catalog__tab" data-category="design">Design <sup>2</sup></button>
+                <button class="catalog__tab" data-category="development">Development <sup>3</sup></button>
+            </div>
+
+            <div class="catalog__search">
+                <input class="catalog__search-input" name="search-course" type="text" placeholder="Search course...">
+                <img class="catalog__search-icon" src="./images/search-icon.svg" alt="" aria-hidden="true">
+            </div>
+        </div>
+
+        <div class="catalog__list"></div>
+
+        <button class="catalog__more">
+            <img class="catalog__more-icon" src="./images/load-more.svg" alt="" aria-hidden="true">
+            Load more
+        </button>
+    </div>
+</main>
+</body>
+</html>

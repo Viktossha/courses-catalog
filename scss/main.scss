@@ -1,0 +1,17 @@
+@use 'reset';
+@use 'variables' as *;
+@use 'catalog';
+@use 'course-card';
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: $main-text-color;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1250px;
+  padding: 0 10px;
+}
