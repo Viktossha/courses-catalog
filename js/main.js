@@ -38,21 +38,32 @@ coursesElement.innerHTML = renderCoursesList(courses);
 
 const tabs = document.querySelectorAll('.catalog__tab')
 
+let activeTab = 'all'
+let searchTerm = ''
+
+const updateCourses = (category = 'all', searchTerm = '') => {
+    let filteredCourses;
+    if (category === 'all') {
+        filteredCourses = courses.filter(course => course.title.toLowerCase().includes(searchTerm))
+    } else {
+        filteredCourses = courses.filter(course => course.category === category && course.title.toLowerCase().includes(searchTerm))
+    }
+    coursesElement.innerHTML = renderCoursesList(filteredCourses);
+}
+
+
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         tabs.forEach(tab => tab.classList.remove('catalog__tab--active'))
         tab.classList.add('catalog__tab--active')
-        const category = tab.dataset.category;
-
-        const filteredCourses = category === 'all' ? courses : courses.filter(course => course.category === category)
-        coursesElement.innerHTML = renderCoursesList(filteredCourses);
+        activeTab = tab.dataset.category;
+        updateCourses(activeTab, searchTerm)
     })
 })
 
 const searchInput = document.querySelector('.catalog__search-input')
 
 searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.currentTarget.value.toLowerCase()
-    const foundCourses = courses.filter(course => course.title.toLowerCase().includes(searchTerm))
-    coursesElement.innerHTML = renderCoursesList(foundCourses);
+    searchTerm = e.currentTarget.value.toLowerCase()
+    updateCourses(activeTab, searchTerm)
 })
